@@ -1,0 +1,608 @@
+
+:root {
+    --black: #0b0b0f;
+    --panel: #16161d;
+    --panel-2: #101015;
+    --red: #e10600;
+    --white: #f5f5f7;
+    --muted: #85858f;
+    --line: #292930;
+    --ferrari: #e10600;
+    --mclaren: #ff8700;
+    --mercedes: #00d2be;
+    --sauber: #39a0ff;
+    --font: 'Titillium Web', 'Segoe UI', sans-serif;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font);
+    background: var(--black);
+    color: var(--white);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.topbar {
+    min-height: 76px;
+    padding: 0 5.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    border-bottom: 1px solid var(--line);
+    background: #09090c;
+}
+
+.logo, footer strong {
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -1px;
+    font-size: 1.2rem;
+}
+
+.logo span, footer span {
+    color: var(--red);
+}
+
+.menu {
+    display: flex;
+    gap: 32px;
+}
+
+.menu a {
+    color: var(--muted);
+    font-size: .78rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: color .2s;
+}
+
+.menu a:hover {
+    color: var(--white);
+}
+
+.btn-primary, .btn-outline {
+    display: inline-block;
+    border: 0;
+    padding: 12px 18px;
+    color: white;
+    cursor: pointer;
+    font: 900 .72rem var(--font);
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    transition: transform .2s, background .2s;
+}
+
+.btn-primary {
+    background: var(--red);
+}
+
+.btn-primary:hover {
+    background: #bd0500;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 1px solid #aaa;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--black);
+}
+
+.top-button {
+    padding: 10px 16px;
+}
+
+.hero {
+    min-height: 410px;
+    padding: 65px 8% 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--black);
+}
+
+.hero img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 43%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    opacity: 1;
+    clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 0;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 43%;
+    height: 100%;
+    background: var(--red);
+    clip-path: polygon(25% 0, 28% 0, 3% 100%, 0 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 510px;
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    color: var(--red);
+    font-weight: 900;
+    font-size: .72rem;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: .88;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--red);
+    margin-top: 7px;
+}
+
+.hero-copy {
+    color: #c3c3ca;
+    max-width: 390px;
+    margin: 20px 0;
+    font-size: .9rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 22px;
+    align-self: flex-end;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-stats div {
+    border-left: 1px solid rgba(255,255,255,.55);
+    padding-left: 12px;
+    text-align: left;
+}
+
+.hero-stats strong {
+    display: block;
+    font-size: 1.8rem;
+    line-height: 1;
+    font-style: italic;
+}
+
+.hero-stats small {
+    color: #ddd;
+    font-size: .62rem;
+    text-transform: uppercase;
+}
+
+.kerb {
+    height: 12px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--red) 0,
+        var(--red) 40px,
+        var(--white) 40px,
+        var(--white) 80px
+    );
+}
+
+.container {
+    max-width: 1180px;
+    margin: auto;
+    padding: 0 5.5%;
+}
+
+.section {
+    padding: 45px 0 12px;
+}
+
+.section h2 {
+    font-size: 1.35rem;
+    font-style: italic;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.section h2 span {
+    color: var(--red);
+    font-size: .75rem;
+    margin-right: 8px;
+}
+
+.drivers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 16px;
+}
+
+.driver-card {
+    min-height: 104px;
+    background: var(--panel);
+    border-top: 4px solid var(--team);
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform .2s, background .2s;
+}
+
+.driver-card:hover {
+    transform: translateY(-5px);
+    background: #20202a;
+}
+
+.team-ferrari {
+    --team: var(--ferrari);
+}
+
+.team-mclaren {
+    --team: var(--mclaren);
+}
+
+.team-mercedes {
+    --team: var(--mercedes);
+}
+
+.team-williams {
+    --team: var(--sauber);
+}
+
+.car-number {
+    font-size: 3.5rem;
+    line-height: 1;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--team);
+    opacity: .42;
+}
+
+.driver-card h3 {
+    font-size: .88rem;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.driver-card p {
+    color: var(--muted);
+    font-size: .72rem;
+}
+
+.filters {
+    display: flex;
+    gap: 12px;
+    align-items: end;
+    margin-bottom: 15px;
+}
+
+.filter-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: var(--muted);
+    font-size: .65rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+input, select, textarea {
+    width: 100%;
+    border: 1px solid #33333d;
+    background: #0d0d12;
+    color: var(--white);
+    padding: 10px;
+    font: .78rem var(--font);
+    outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--red);
+}
+
+.filter-button {
+    min-width: 90px;
+    padding: 11px;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .78rem;
+    text-align: left;
+}
+
+th {
+    color: var(--muted);
+    font-size: .62rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 11px 10px;
+    border-bottom: 1px solid var(--line);
+}
+
+td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #202027;
+}
+
+tbody tr:hover {
+    background: #1e1e28;
+}
+
+.leader {
+    background: rgba(225,6,0,.12);
+}
+
+.pos {
+    display: inline-flex;
+    width: 23px;
+    height: 23px;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    color: var(--black);
+    font-weight: 900;
+}
+
+.leader .pos {
+    background: var(--red);
+    color: white;
+}
+
+.bar {
+    display: inline-block;
+    width: 4px;
+    height: 15px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.mclaren {
+    background: var(--mclaren);
+}
+
+.ferrari {
+    background: var(--ferrari);
+}
+
+.mercedes {
+    background: var(--mercedes);
+}
+
+.sauber {
+    background: var(--sauber);
+}
+
+.tickets {
+    display: grid;
+    grid-template-columns: .9fr 1.5fr;
+    gap: 32px;
+    padding-bottom: 55px;
+    align-items: start;
+}
+
+.ticket-intro {
+    color: #c3c3ca;
+    font-size: .85rem;
+    margin-bottom: 15px;
+}
+
+.notice {
+    color: #f4d35e;
+    background: rgba(244,211,94,.08);
+    padding: 9px 11px;
+    font-size: .72rem;
+    margin-bottom: 15px;
+}
+
+.ticket-list {
+    list-style: none;
+}
+
+.ticket-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: .78rem;
+}
+
+.ticket-list strong {
+    color: var(--red);
+}
+
+.ticket-form {
+    background: var(--panel);
+    border-top: 3px solid var(--red);
+    padding: 18px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.form-group label {
+    color: #bbb;
+    font-size: .65rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    font-size: .72rem;
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+.muted {
+    color: var(--muted);
+    font-size: .65rem;
+}
+
+.ticket-form button {
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: .68rem;
+    padding: 22px 12px;
+}
+
+footer strong {
+    color: var(--white);
+    font-size: .8rem;
+}
+
+@media (max-width: 768px) {
+    .topbar {
+        padding: 15px 5%;
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 55px 7% 28px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+        background: var(--black);
+    }
+
+    .hero img {
+        position: relative;
+        right: auto;
+        top: auto;
+        width: 100%;
+        height: 200px;
+        transform: none;
+        clip-path: none;
+        object-fit: cover;
+        margin-top: 10px;
+        order: 2;
+    }
+
+    .hero::after {
+        display: none;
+    }
+
+    .hero-content {
+        order: 1;
+    }
+
+    .hero-stats {
+        align-self: flex-start;
+        order: 3;
+    }
+
+    .hero h1 {
+        font-size: 3.2rem;
+    }
+
+    .drivers {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    table {
+        min-width: 620px;
+    }
+
+    td {
+        white-space: nowrap;
+    }
+
+    .tickets {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 420px) {
+    .top-button {
+        font-size: .62rem;
+        padding: 9px 11px;
+    }
+
+    .drivers {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-stats {
+        gap: 14px;
+    }
+}

@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GP de São Paulo | Pit Wall</title>
+
+    <!--Fonte-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <a class="logo" href="#">PIT<span>WALL</span></a>
+
+        <nav class="menu">
+            <a href="#pilotos">Pilotos</a>
+            <a href="#classificacao">Classificação</a>
+            <a href="#ingressos">Ingressos</a>
+        </nav>
+
+        <a class="btn-primary top-button" href="#ingressos">Comprar ingresso</a>
+    </header>
+
+        <section class="hero">
+
+    <img src="img/piloto.png" alt="Imagem do carro na chuva" class="hero-image">
+
+        <div class="hero-content">
+            <p class="eyebrow">Temporada 2026 · Autódromo de Interlagos</p>
+
+            <h1>GP DE <span>SÃO PAULO</span></h1>
+
+            <p class="hero-copy">
+                A emoção da Fórmula 1 chega a Interlagos. Prepare-se para viver um fim de semana inesquecível.
+            </p>
+
+            <div class="hero-actions">
+                <a class="btn-primary" href="#ingressos">Garanta seu lugar</a>
+                <a class="btn-outline" href="#classificacao">Ver classificação</a>
+            </div>
+        </div>
+
+        <div class="hero-stats">
+            <div><strong>71</strong><small>Voltas</small></div>
+            <div><strong>4.309</strong><small>Extensão (m)</small></div>
+            <div><strong>15</strong><small>Curvas</small></div>
+        </div>
+
+    </section>
+
+    <div class="kerb"></div>
+
+    <main class="container">
+
+        <section id="pilotos" class="section">
+            <h2><span>01</span> Grid de pilotos</h2>
+
+            <div class="drivers">
+
+                <article class="driver-card team-ferrari">
+                    <span class="car-number">16</span>
+                    <div>
+                        <h3>Charles Leclerc</h3>
+                        <p>Ferrari</p>
+                    </div>
+                </article>
+
+                <article class="driver-card team-mclaren">
+                    <span class="car-number">81</span>
+                    <div>
+                        <h3>Oscar Piastri</h3>
+                        <p>McLaren</p>
+                    </div>
+                </article>
+
+                <article class="driver-card team-mercedes">
+                    <span class="car-number">63</span>
+                    <div>
+                        <h3>George Russell</h3>
+                        <p>Mercedes</p>
+                    </div>
+                </article>
+
+                <article class="driver-card team-williams">
+                    <span class="car-number">5</span>
+                    <div>
+                        <h3>Gabriel Bortoleto</h3>
+                        <p>Sauber</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="classificacao" class="section">
+            <h2><span>02</span> Classificação</h2>
+
+            <form class="filters" action="#">
+                <label class="filter-item">
+                    Pesquisar piloto
+                    <input type="search" placeholder="Nome do piloto...">
+                </label>
+
+                <label class="filter-item">
+                    Equipe
+                    <select>
+                        <option>Todas as equipes</option>
+                        <option>Ferrari</option>
+                        <option>McLaren</option>
+                        <option>Mercedes</option>
+                        <option>Sauber</option>
+                    </select>
+                </label>
+
+                <button class="btn-primary filter-button" type="button">Filtrar</button>
+            </form>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pos.</th>
+                            <th>Piloto</th>
+                            <th>Equipe</th>
+                            <th>Voltas</th>
+                            <th>Diferença</th>
+                            <th>Pontos</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="leader">
+                            <td><span class="pos">1</span></td>
+                            <td>Oscar Piastri</td>
+                            <td><i class="bar mclaren"></i> McLaren</td>
+                            <td>71</td>
+                            <td>—</td>
+                            <td>25</td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="pos">2</span></td>
+                            <td>Charles Leclerc</td>
+                            <td><i class="bar ferrari"></i> Ferrari</td>
+                            <td>71</td>
+                            <td>+1.287</td>
+                            <td>18</td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="pos">3</span></td>
+                            <td>George Russell</td>
+                            <td><i class="bar mercedes"></i> Mercedes</td>
+                            <td>71</td>
+                            <td>+4.021</td>
+                            <td>15</td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="pos">4</span></td>
+                            <td>Gabriel Bortoleto</td>
+                            <td><i class="bar sauber"></i> Sauber</td>
+                            <td>71</td>
+                            <td>+8.650</td>
+                            <td>12</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="ingressos" class="section tickets">
+
+            <div class="tickets-info">
+                <h2><span>03</span> Ingressos</h2>
+
+                <p class="ticket-intro">
+                    Não perca a chance de acompanhar de perto toda a velocidade da Fórmula 1.
+                </p>
+
+                <p class="notice">Escolha seu setor e garanta seu lugar!</p>
+
+                <ul class="ticket-list">
+                    <li><span>Arquibancada A</span><strong>R$ 490,00</strong></li>
+                    <li><span>Arquibancada B</span><strong>R$ 650,00</strong></li>
+                    <li><span>Setor VIP</span><strong>R$ 1.250,00</strong></li>
+                </ul>
+            </div>
+
+            <form class="ticket-form" action="#">
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="nome">Nome completo</label>
+                        <input id="nome" type="text" placeholder="Seu nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" placeholder="seu@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dia">Data da visita</label>
+                        <input id="dia" type="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="qtd">Quantidade</label>
+                        <input id="qtd" type="number" min="1" max="6" placeholder="1 a 6">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="setor">Escolha seu setor</label>
+                        <select id="setor">
+                            <option>Arquibancada A</option>
+                            <option>Arquibancada B</option>
+                            <option>Setor VIP</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="perfil">Link do perfil</label>
+                        <input id="perfil" type="url" placeholder="https://...">
+                    </div>
+
+                    <small class="full muted">Até 6 ingressos por pessoa.</small>
+
+                    <div class="form-group full">
+                        <label for="foto">Foto do documento (opcional)</label>
+                        <input id="foto" type="file" accept="image/*">
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="recado">Observações</label>
+                        <textarea id="recado" rows="3" placeholder="Escreva aqui seu recado..."></textarea>
+                    </div>
+
+                    <button class="btn-primary full" type="submit">Enviar reserva</button>
+
+                </div>
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <strong>PIT<span>WALL</span></strong> · Projeto de estudo de HTML e CSS · Feito por Tainá Alves Silveira ·
+    </footer>
+
+</body>
+</html>
